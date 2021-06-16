@@ -1,0 +1,21 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+ 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.TMETZ2 }}
+          publish_dir: ./
+          allow_empty_commit: true
+          enable_jekyll: true
+          
